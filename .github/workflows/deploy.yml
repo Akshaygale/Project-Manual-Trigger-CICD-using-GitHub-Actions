@@ -36,4 +36,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/demoapp:latest
           docker stop demo || true
           docker rm demo || true
-          docker run -d -p 5000:5000 --name demo ${{ secrets.DOCKER_USERNAME }}/demoapp:latest
+          docker run -d -p 5000:5000 --name demo ${{ secrets.DOCKER_USERNAME }}/demoapp:${{ env.VERSION }}
